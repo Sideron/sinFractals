@@ -26,6 +26,11 @@ function draw() {
  dir+=counter
  lastBullet =createBullet(sin(dir)*5,cos(dir)*5,lastBullet)
  bullets.forEach(x => {x.move()})
+  stroke("white")
+  // chill effect
+  //stroke(sin(counter)*255,cos(counter)*255,tan(counter)*255)
+  // disco effect
+  //stroke(sin(dir)*255,cos(dir)*255,tan(dir)*255)
  bullets.forEach(x => {x.draw()})
   destroyLastBullet();
 }
@@ -45,7 +50,7 @@ function Bullet(x,y,dirX,dirY,nextBullet){
 
  this.draw = function(){
   //circle(this.x,this.y,8)
-   stroke("white")
+   //stroke("white")
    if(nextBullet !== null){
      line(this.x,this.y,nextBullet.x,nextBullet.y)
    }
